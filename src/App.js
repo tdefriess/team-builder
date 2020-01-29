@@ -12,12 +12,20 @@ function App() {
       role: 'Full Stack Web Developer'
     }
   ]);
-  
+  const addNewTeamMember = member => {
+    const newMember = {
+      id: Date.now(),
+      name: member.name,
+      email: member.email,
+      role: member.role
+    };
+    setTeamList([...teamList, newMember]);
+  }
   return (
     <div className="App">
       <h1>My Team</h1>
-      <TeamList team={teamList} />
-      <Form />
+      <Form addNewMember={addNewTeamMember} />
+      <TeamList team={teamList} />      
     </div>
   );
 }

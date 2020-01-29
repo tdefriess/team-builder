@@ -12,6 +12,7 @@ const NoteForm = props => {
     }
     const submitForm = e => {
         e.preventDefault();
+        props.addNewMember(teamMember);
         setTeamMember({ name: '', email: '', role: ''});
     }
     return (
